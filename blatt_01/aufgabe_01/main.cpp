@@ -10,17 +10,18 @@ using namespace std;
 class Notepad {
 public:
     void notepad_create() {
-        text = (char *) calloc(1, 1);
+        text = (char *) malloc(sizeof(char) * BUFFER_SIZE);
 
-        while (fgets(buffer, BUFFER_SIZE, stdin)) {
+        while (true) {
+            //fgets(buffer, BUFFER_SIZE, stdin);
+            cin.getline(buffer, BUFFER_SIZE);
 
             // Wenn Buffer '/read' enthält, gib text aus
-            if (strstr(buffer, "/read")) {
-                notepad_read();
+            if (strstr(buffer, "\\read")) {
+                cout << notepad_read();
             }
-
                 // Wenn Buffer '/exit' enthält, beende Schleife
-            else if (strstr(buffer, "/exit")) {
+            else if (strstr(buffer, "\\exit")) {
                 break;
             } else {
                 // Kopiere Text aus Buffer in die Zielvariable
@@ -40,9 +41,8 @@ public:
         strcat(text, str);
     }
 
-    void notepad_read() {
-        //cout << "notepad_read call";
-        printf("%s", text);
+    char *notepad_read() {
+        return text;
     }
 
 private:
