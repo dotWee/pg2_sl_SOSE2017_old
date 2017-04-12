@@ -16,6 +16,8 @@ private:
     XyPair size;
 
 public:
+    Stone();
+
     int pos_x();
 
     int pos_y();

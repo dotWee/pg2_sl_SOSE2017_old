@@ -24,3 +24,17 @@ int Stone::size_y() {
 char Stone::getBuffer(XyPair coord) {
     return 0;
 }
+
+// TODO Stone zufällig generieren
+Stone::Stone() {
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            buffer[i][j] = ' ';
+        }
+    }
+
+    buffer[2][2] = 'X';
+    buffer[2][3] = 'X';
+    buffer[3][2] = 'X';
+    buffer[3][3] = 'X';
+}
