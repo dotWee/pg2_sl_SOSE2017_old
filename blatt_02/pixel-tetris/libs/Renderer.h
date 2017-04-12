@@ -12,9 +12,8 @@ class Renderer {
 
 private:
     char screen_buffer[22][12];
-
-    Field *field;
-    Stone *stone;
+    Field *field = nullptr;
+    Stone *stone = nullptr;
 
     void screenBufferAdd(Field *);
 
