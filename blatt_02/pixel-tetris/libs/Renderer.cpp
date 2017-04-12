@@ -16,10 +16,15 @@ void Renderer::Render() {
 
 }
 
-void Renderer::addObject(Field *) {
+void Renderer::addObject(Field field) {
 
 }
 
-void Renderer::addObject(Stone *) {
+void Renderer::addObject(Stone field) {
 
+}
+
+Renderer::Renderer() {
+    field = NULL;
+    stone = NULL;
 }
