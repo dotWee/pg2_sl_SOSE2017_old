@@ -11,6 +11,8 @@ class XyPair {
 public:
     XyPair(int x, int y);
 
+    XyPair();
+
     int getX() const;
 
     void setX(int x);

@@ -21,3 +21,5 @@ void XyPair::setY(int y) {
 }
 
 XyPair::XyPair(int x, int y) : x(x), y(y) {}
+
+XyPair::XyPair() { 0, 0; }
