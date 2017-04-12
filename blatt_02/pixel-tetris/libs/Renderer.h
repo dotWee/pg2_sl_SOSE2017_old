@@ -25,9 +25,9 @@ public:
 public:
     void Render();
 
-    void addObject(Field field);
+    void addObject(Field stone);
 
-    void addObject(Stone field);
+    void addObject(Stone stone);
 };
 
 
