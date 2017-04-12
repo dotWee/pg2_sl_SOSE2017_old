@@ -9,6 +9,9 @@
 #include <cstdlib>
 #include "Stone.h"
 
+#define FIELD_WIDTH 12
+#define FIELD_HEIGHT 22
+
 class Field {
 
 private:
