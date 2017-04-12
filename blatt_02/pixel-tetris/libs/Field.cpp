@@ -4,9 +4,6 @@
 
 #include "Field.h"
 
-#define FIELD_WIDTH 12
-#define FIELD_HEIGHT 22
-
 int Field::pos_x() {
     return pos.getX();
 }
@@ -23,9 +20,8 @@ int Field::size_y() {
     return size.getY();
 }
 
-// TODO fertig definieren!
 char Field::getBuffer(XyPair coord) {
-    return 0;
+    return buffer[coord.getX()][coord.getY()];
 }
 
 Field::Field() {
