@@ -4,6 +4,9 @@
 
 #include "Field.h"
 
+#define FIELD_WIDTH 12
+#define FIELD_HEIGHT 22
+
 int Field::pos_x() {
     return pos.getX();
 }
@@ -23,4 +26,45 @@ int Field::size_y() {
 // TODO fertig definieren!
 char Field::getBuffer(XyPair coord) {
     return 0;
+}
+
+Field::Field() {
+
+    // Für jede der 22 Spalten
+    for (int i = 0; i <= FIELD_HEIGHT; ++i) {
+
+        // Für jede der 12 Zeilen
+        for (int j = 0; j <= FIELD_WIDTH; ++j) {
+            char *content = &buffer[i][j];
+
+            // Wenn wir uns am äußeren Spielfeldrand befinden...
+            if (j == 0 || j == FIELD_WIDTH) {
+                buffer[i][j] = (char) 186;
+            }
+
+            // Wenn wir uns an der letzten Zeile befinden...
+            if (i == FIELD_HEIGHT) {
+
+                // Wenn wir uns an der unteren linken Ecke befinden...
+                if (j == 0) {
+                    buffer[i][j] = (char) 200;
+                }
+
+                    // Wenn wir uns an der unteren rechten Ecke befinden...
+                else if (j == FIELD_WIDTH) {
+                    buffer[i][j] = (char) 188;
+                }
+
+                    // Alle Zeichen zwischen der unteren linken Ecke und der unteren rechten Ecke
+                else {
+                    buffer[i][j] = (char) 205;
+                }
+            }
+
+                // Alle Zeichen zwischen den Rändern
+            else {
+                buffer[i][j] = ' ';
+            }
+        }
+    }
 }

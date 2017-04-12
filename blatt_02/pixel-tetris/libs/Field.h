@@ -6,6 +6,7 @@
 #define PG2_SL_SOSE2017_FIELD_H
 
 
+#include <cstdlib>
 #include "Stone.h"
 
 class Field {
@@ -19,6 +20,8 @@ private:
     XyPair size;
 
 public:
+    Field();
+
     int pos_x();
 
     int pos_y();
