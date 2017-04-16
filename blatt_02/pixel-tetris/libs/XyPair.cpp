@@ -4,7 +4,7 @@
 
 #include "XyPair.h"
 
-int XyPair::getX() const {
+int XyPair::getX() {
     return x;
 }
 
@@ -12,7 +12,7 @@ void XyPair::setX(int x) {
     XyPair::x = x;
 }
 
-int XyPair::getY() const {
+int XyPair::getY() {
     return y;
 }
 
@@ -20,6 +20,4 @@ void XyPair::setY(int y) {
     XyPair::y = y;
 }
 
-XyPair::XyPair(int x, int y) : x(x), y(y) {}
-
-XyPair::XyPair() { 0, 0; }
+XyPair::XyPair(int x, int y) : setX(x), setY(y) {}
