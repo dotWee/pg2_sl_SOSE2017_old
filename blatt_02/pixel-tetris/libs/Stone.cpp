@@ -22,13 +22,13 @@ int Stone::size_y() {
 
 // TODO fertig definieren!
 char Stone::getBuffer(XyPair coord) {
-    return 0;
+    return buffer[coord.getY()][coord.getX()];
 }
 
 // TODO Stone zufällig generieren
 Stone::Stone() {
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < 4; ++j) {
+    for (int i = 0; i < STONE_DIMENSION_DEFAULT; ++i) {
+        for (int j = 0; j < STONE_DIMENSION_DEFAULT; ++j) {
             buffer[i][j] = ' ';
         }
     }

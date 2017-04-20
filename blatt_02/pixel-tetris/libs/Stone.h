@@ -8,12 +8,14 @@
 
 #include "XyPair.h"
 
+#define STONE_DIMENSION_DEFAULT 4
+
 class Stone {
 
 private:
-    char buffer[4][4];
-    XyPair pos;
-    XyPair size;
+    char buffer[STONE_DIMENSION_DEFAULT][STONE_DIMENSION_DEFAULT];
+    XyPair pos = XyPair(0, 0);
+    XyPair size = XyPair(STONE_DIMENSION_DEFAULT, STONE_DIMENSION_DEFAULT);
 
 public:
     Stone();
