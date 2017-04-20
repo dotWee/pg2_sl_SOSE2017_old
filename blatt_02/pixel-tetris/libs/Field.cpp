@@ -21,25 +21,27 @@ int Field::size_y() {
 }
 
 char Field::getBuffer(XyPair coord) {
-    return buffer[coord.getX()][coord.getY()];
+    return buffer[coord.getY()][coord.getX()];
 }
 
 Field::Field() {
+    pos = XyPair(0, 0);
+    size = XyPair(FIELD_WIDTH_X - 2, FIELD_HEIGHT_Y - 2);
 
     // Für jede der 22 Spalten
-    for (int i = 0; i <= FIELD_HEIGHT; ++i) {
+    for (int i = 0; i <= FIELD_HEIGHT_Y; ++i) {
 
         // Für jede der 12 Zeilen
-        for (int j = 0; j <= FIELD_WIDTH; ++j) {
+        for (int j = 0; j <= FIELD_WIDTH_X; ++j) {
             char *content = &buffer[i][j];
 
             // Wenn wir uns am äußeren Spielfeldrand befinden...
-            if (j == 0 || j == FIELD_WIDTH) {
+            if (j == 0 || j == FIELD_WIDTH_X) {
                 buffer[i][j] = (char) 186;
             }
 
             // Wenn wir uns an der letzten Zeile befinden...
-            if (i == FIELD_HEIGHT) {
+            if (i == FIELD_HEIGHT_Y) {
 
                 // Wenn wir uns an der unteren linken Ecke befinden...
                 if (j == 0) {
@@ -47,7 +49,7 @@ Field::Field() {
                 }
 
                     // Wenn wir uns an der unteren rechten Ecke befinden...
-                else if (j == FIELD_WIDTH) {
+                else if (j == FIELD_WIDTH_X) {
                     buffer[i][j] = (char) 188;
                 }
 

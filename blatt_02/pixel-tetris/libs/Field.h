@@ -9,18 +9,18 @@
 #include <cstdlib>
 #include "Stone.h"
 
-#define FIELD_WIDTH 12
-#define FIELD_HEIGHT 22
+#define FIELD_WIDTH_X 12
+#define FIELD_HEIGHT_Y 22
 
 class Field {
 
 private:
-    char buffer[22][12];
+    char buffer[FIELD_HEIGHT_Y][FIELD_WIDTH_X];
     Stone *currStone;
     Stone *nextStone;
 
-    XyPair pos;
-    XyPair size;
+    XyPair pos = XyPair(0, 0);
+    XyPair size = pos;
 
 public:
     Field();

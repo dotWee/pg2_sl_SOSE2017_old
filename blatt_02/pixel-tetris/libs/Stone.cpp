@@ -20,7 +20,6 @@ int Stone::size_y() {
     return size.getY();
 }
 
-// TODO fertig definieren!
 char Stone::getBuffer(XyPair coord) {
     return buffer[coord.getY()][coord.getX()];
 }
