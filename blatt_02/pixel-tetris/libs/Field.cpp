@@ -43,20 +43,22 @@ Field::Field() {
 
             // Wenn wir uns an der letzten Zeile befinden...
             if (y == FIELD_HEIGHT_Y) {
+                switch (x) {
 
-                // Wenn wir uns an der unteren linken Ecke befinden...
-                if (x == 0) {
-                    buffer[y][x] = (char) 200;
-                }
+                    // Wenn wir uns an der unteren linken Ecke befinden...
+                    case 0:
+                        buffer[y][x] = (char) 200;
+                        break;
 
-                    // Wenn wir uns an der unteren rechten Ecke befinden...
-                else if (x == FIELD_WIDTH_X) {
-                    buffer[y][x] = (char) 188;
-                }
+                        // Wenn wir uns an der unteren rechten Ecke befinden...
+                    case FIELD_WIDTH_X:
+                        buffer[y][x] = (char) 188;
+                        break;
 
-                    // Alle Zeichen zwischen der unteren linken Ecke und der unteren rechten Ecke
-                else {
-                    buffer[y][x] = (char) 205;
+                        // Alle Zeichen zwischen der unteren linken Ecke und der unteren rechten Ecke
+                    default:
+                        buffer[y][x] = (char) 205;
+                        break;
                 }
             }
 
