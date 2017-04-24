@@ -16,8 +16,9 @@ private:
     Stone *stone;
 
     void screenBufferAdd(Field *field);
-
     void screenBufferAdd(Stone *stone);
+
+    void screenBufferAdd(XyPair xyPair, char buffer);
 
 public:
     Renderer();
