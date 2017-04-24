@@ -29,40 +29,45 @@ Field::Field() {
     size = XyPair(FIELD_WIDTH_X - 2, FIELD_HEIGHT_Y - 2);
 
     // Für jede der 22 Spalten
-    for (int i = 0; i <= FIELD_HEIGHT_Y; ++i) {
+    for (int y = 0; y <= FIELD_HEIGHT_Y; ++y) {
 
         // Für jede der 12 Zeilen
-        for (int j = 0; j <= FIELD_WIDTH_X; ++j) {
-            char *content = &buffer[i][j];
+        for (int x = 0; x <= FIELD_WIDTH_X; ++x) {
+            // Alle Zeichen zwischen den Rändern
+            buffer[y][x] = (char) 32;
 
             // Wenn wir uns am äußeren Spielfeldrand befinden...
-            if (j == 0 || j == FIELD_WIDTH_X) {
-                buffer[i][j] = (char) 186;
+            if (x == 0 || x == FIELD_WIDTH_X) {
+                buffer[y][x] = (char) 186;
             }
 
             // Wenn wir uns an der letzten Zeile befinden...
-            if (i == FIELD_HEIGHT_Y) {
+            if (y == FIELD_HEIGHT_Y) {
 
                 // Wenn wir uns an der unteren linken Ecke befinden...
-                if (j == 0) {
-                    buffer[i][j] = (char) 200;
+                if (x == 0) {
+                    buffer[y][x] = (char) 200;
                 }
 
                     // Wenn wir uns an der unteren rechten Ecke befinden...
-                else if (j == FIELD_WIDTH_X) {
-                    buffer[i][j] = (char) 188;
+                else if (x == FIELD_WIDTH_X) {
+                    buffer[y][x] = (char) 188;
                 }
 
                     // Alle Zeichen zwischen der unteren linken Ecke und der unteren rechten Ecke
                 else {
-                    buffer[i][j] = (char) 205;
+                    buffer[y][x] = (char) 205;
                 }
             }
 
-                // Alle Zeichen zwischen den Rändern
-            else {
-                buffer[i][j] = ' ';
+            /*
+             * DEBUG
+            std::cout << (int) buffer[y][x] << " ";
+            // Letzte Spalte -> Newline
+            if (x == FIELD_WIDTH_X) {
+                std::cout << '\n';
             }
+             */
         }
     }
 }
