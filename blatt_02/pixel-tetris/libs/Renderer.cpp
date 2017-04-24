@@ -27,7 +27,7 @@ void Renderer::screenBufferAdd(Stone *stone) {
 
         // Für jede der 12 Zeilen
         for (int x = 0; x <= FIELD_WIDTH_X; ++x) {
-            XyPair xyPair = XyPair(x, y);
+            XyPair xyPair = XyPair(x + stone->pos_x(), y + stone->pos_y());
             char buffer = stone->getBuffer(xyPair);
 
             screenBufferAdd(xyPair, buffer);
