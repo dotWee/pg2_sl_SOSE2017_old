@@ -47,6 +47,9 @@ void Renderer::Render() {
             char value = screen_buffer[y][x];
             std::cout << value;
 
+            // Gib Int-Wert von char zu Debug-Zwecken aus
+            //std::cout << (char) 32 << (int) value;
+
             // Letzte Spalte -> Newline
             if (x == FIELD_WIDTH_X) {
                 std::cout << '\n';

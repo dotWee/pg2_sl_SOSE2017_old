@@ -61,15 +61,6 @@ Field::Field() {
                         break;
                 }
             }
-
-            /*
-             * DEBUG
-            std::cout << (int) buffer[y][x] << " ";
-            // Letzte Spalte -> Newline
-            if (x == FIELD_WIDTH_X) {
-                std::cout << '\n';
-            }
-             */
         }
     }
 }
