@@ -6,8 +6,8 @@ int main() {
     Stone stone;
     Renderer renderer;
 
-    renderer.addObject(field);
-    renderer.addObject(stone);
+    renderer.addObject(&field);
+    renderer.addObject(&stone);
 
     renderer.Render();
 
