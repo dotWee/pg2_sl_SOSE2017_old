@@ -38,7 +38,7 @@ Field::Field() {
 
             // Wenn wir uns am äußeren Spielfeldrand befinden...
             if (x == 0 || x == FIELD_WIDTH_X) {
-                buffer[y][x] = (char) 186;
+                buffer[y][x] = (char) 124; // 186;
             }
 
             // Wenn wir uns an der letzten Zeile befinden...
@@ -47,17 +47,17 @@ Field::Field() {
 
                     // Wenn wir uns an der unteren linken Ecke befinden...
                     case 0:
-                        buffer[y][x] = (char) 200;
+                        buffer[y][x] = (char) 43; // 200;
                         break;
 
                         // Wenn wir uns an der unteren rechten Ecke befinden...
                     case FIELD_WIDTH_X:
-                        buffer[y][x] = (char) 188;
+                        buffer[y][x] = (char) 43; // 188;
                         break;
 
                         // Alle Zeichen zwischen der unteren linken Ecke und der unteren rechten Ecke
                     default:
-                        buffer[y][x] = (char) 205;
+                        buffer[y][x] = (char) 45; // 205;
                         break;
                 }
             }
