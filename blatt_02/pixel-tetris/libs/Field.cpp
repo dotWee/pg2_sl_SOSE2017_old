@@ -33,16 +33,29 @@ Field::Field() {
 
         // Für jede der 12 Zeilen
         for (int x = 0; x <= FIELD_WIDTH_X; ++x) {
-            // Alle Zeichen zwischen den Rändern
-            buffer[y][x] = (char) 32;
 
-            // Wenn wir uns am äußeren Spielfeldrand befinden...
-            if (x == 0 || x == FIELD_WIDTH_X) {
-                buffer[y][x] = (char) 124; // 186;
+            // Alles über der letzten Zeile
+            if (y < FIELD_HEIGHT_Y) {
+                switch (x) {
+                    // Wenn wir uns am linken äußeren Spielfeldrand befinden...
+                    case 0:
+                        buffer[y][x] = (char) 124; // '|' 186;
+                        break;
+
+                        // Wenn wir uns am rechten äußeren Spielfeldrand befinden...
+                    case FIELD_WIDTH_X:
+                        buffer[y][x] = (char) 124; // '|' 186;
+                        break;
+
+                        // Alle Zeichen zwischen den Rändern
+                    default:
+                        buffer[y][x] = (char) 32; // ' '
+                        break;
+                }
             }
 
             // Wenn wir uns an der letzten Zeile befinden...
-            if (y == FIELD_HEIGHT_Y) {
+            else {
                 switch (x) {
 
                     // Wenn wir uns an der unteren linken Ecke befinden...
