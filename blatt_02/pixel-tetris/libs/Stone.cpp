@@ -24,16 +24,15 @@ char Stone::getBuffer(XyPair coord) {
     return buffer[coord.getY()][coord.getX()];
 }
 
-// TODO Stone zufällig generieren
 Stone::Stone() {
-    for (int i = 0; i < STONE_DIMENSION_DEFAULT; ++i) {
-        for (int j = 0; j < STONE_DIMENSION_DEFAULT; ++j) {
-            buffer[i][j] = ' ';
+    for (int y = 0; y <= STONE_DIMENSION_DEFAULT; ++y) {
+        for (int x = 0; x <= STONE_DIMENSION_DEFAULT; ++x) {
+
+            if (y >= 2 && y <= 3 && x >= 2 && x <= 3) {
+                buffer[y][x] = 'X';
+            } else {
+                buffer[y][x] = ' ';
+            }
         }
     }
-
-    buffer[2][2] = 'X';
-    buffer[2][3] = 'X';
-    buffer[3][2] = 'X';
-    buffer[3][3] = 'X';
 }
