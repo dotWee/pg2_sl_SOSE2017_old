@@ -3,5 +3,5 @@ project(blatt_01_aufgabe_01)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror")
 
-set(SOURCE_FILES main.cpp main.cpp)
+set(SOURCE_FILES main.cpp main.cpp Nodepad.cpp Nodepad.h)
 add_executable(blatt_01_aufgabe_01 ${SOURCE_FILES})
