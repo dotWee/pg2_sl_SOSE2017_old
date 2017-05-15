@@ -28,6 +28,11 @@ Field::Field() {
     pos = XyPair(0, 0);
     size = XyPair(FIELD_WIDTH_X - 2, FIELD_HEIGHT_Y - 2);
 
+    init_field();
+}
+
+void Field::init_field() {
+
     // Für jede der 22 Spalten
     for (int y = 0; y <= FIELD_HEIGHT_Y; ++y) {
 
@@ -54,7 +59,7 @@ Field::Field() {
                 }
             }
 
-            // Wenn wir uns an der letzten Zeile befinden...
+                // Wenn wir uns an der letzten Zeile befinden...
             else {
                 switch (x) {
 

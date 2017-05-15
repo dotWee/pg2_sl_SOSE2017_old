@@ -22,6 +22,8 @@ private:
     XyPair pos = XyPair(0, 0);
     XyPair size = pos;
 
+    void init_field();
+
 public:
     Field();
 
