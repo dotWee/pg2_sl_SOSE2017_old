@@ -12,10 +12,16 @@
 #define FIELD_WIDTH_X 12
 #define FIELD_HEIGHT_Y 22
 
+#define NEXTSTONE_WIDTH_X 5
+#define NEXTSTONE_HEIGHT_Y 5
+
+static const int WIDTH_X = FIELD_WIDTH_X + NEXTSTONE_WIDTH_X;
+static const int HEIGHT_Y = FIELD_HEIGHT_Y;
+
 class Field {
 
 private:
-    char buffer[FIELD_HEIGHT_Y][FIELD_WIDTH_X];
+    char buffer[HEIGHT_Y][WIDTH_X];
     Stone *currStone;
     Stone *nextStone;
 
@@ -23,6 +29,8 @@ private:
     XyPair size = pos;
 
     void init_field();
+
+    void init_nextStone();
 
 public:
     Field();

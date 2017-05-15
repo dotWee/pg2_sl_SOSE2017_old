@@ -7,11 +7,11 @@
 
 void Renderer::screenBufferAdd(Field *field) {
 
-    // Für jede der 22 Spalten
-    for (int y = 0; y <= FIELD_HEIGHT_Y; ++y) {
+    // Für jede Zeile
+    for (int y = 0; y <= HEIGHT_Y; ++y) {
 
-        // Für jede der 12 Zeilen
-        for (int x = 0; x <= FIELD_WIDTH_X; ++x) {
+        // Für jede Spalte
+        for (int x = 0; x <= WIDTH_X; ++x) {
             XyPair xyPair = XyPair(x, y);
             char buffer = field->getBuffer(xyPair);
 
@@ -22,11 +22,11 @@ void Renderer::screenBufferAdd(Field *field) {
 
 void Renderer::screenBufferAdd(Stone *stone) {
 
-    // Für jede der 22 Spalten
-    for (int y = 0; y <= FIELD_HEIGHT_Y; ++y) {
+    // Für jede Zeile
+    for (int y = 0; y <= HEIGHT_Y; ++y) {
 
-        // Für jede der 12 Zeilen
-        for (int x = 0; x <= FIELD_WIDTH_X; ++x) {
+        // Für jede Spalte
+        for (int x = 0; x <= WIDTH_X; ++x) {
             XyPair xyPair = XyPair(x + stone->pos_x(), y + stone->pos_y());
             char buffer = stone->getBuffer(xyPair);
 
@@ -37,11 +37,11 @@ void Renderer::screenBufferAdd(Stone *stone) {
 
 void Renderer::Render() {
 
-    // Für jede der 22 Spalten
-    for (int y = 0; y <= FIELD_HEIGHT_Y; ++y) {
+    // Für jede Zeile
+    for (int y = 0; y <= HEIGHT_Y; ++y) {
 
-        // Für jede der 12 Zeilen
-        for (int x = 0; x <= FIELD_WIDTH_X; ++x) {
+        // Für jede Spalte
+        for (int x = 0; x <= WIDTH_X; ++x) {
 
             // Gib Char aus Buffer aus
             char value = screen_buffer[y][x];
@@ -51,7 +51,7 @@ void Renderer::Render() {
             //std::cout << (char) 32 << (int) value;
 
             // Letzte Spalte -> Newline
-            if (x == FIELD_WIDTH_X) {
+            if (x == WIDTH_X) {
                 std::cout << '\n';
             }
         }

@@ -28,6 +28,7 @@ Field::Field() {
     pos = XyPair(0, 0);
     size = XyPair(FIELD_WIDTH_X - 2, FIELD_HEIGHT_Y - 2);
 
+    init_nextStone();
     init_field();
 }
 
@@ -75,9 +76,39 @@ void Field::init_field() {
 
                         // Alle Zeichen zwischen der unteren linken Ecke und der unteren rechten Ecke
                     default:
-                        buffer[y][x] = (char) 45; // 205;
+                        buffer[y][x] = (char) 45; // '-' 205;
                         break;
                 }
+            }
+        }
+    }
+}
+
+void Field::init_nextStone() {
+
+    // Für jede Zeile
+    for (int y = 0; y <= HEIGHT_Y; ++y) {
+
+        // Für jede Spalte nach dem Spielfeld
+        for (int x = FIELD_WIDTH_X; x <= WIDTH_X; ++x) {
+
+            if (y <= NEXTSTONE_HEIGHT_Y) {
+                switch (y) {
+
+                    case 0:
+                        buffer[y][x] = (char) 45; // '-' 205;
+                        break;
+
+                    case NEXTSTONE_HEIGHT_Y:
+                        buffer[y][x] = (char) 45; // '-' 205;
+                        break;
+
+                    default:
+                        buffer[y][x] = (char) 32; // ' '
+                        break;
+                }
+            } else {
+                buffer[y][x] = (char) 32; // ' '
             }
         }
     }

@@ -11,7 +11,7 @@
 class Renderer {
 
 private:
-    char screen_buffer[FIELD_HEIGHT_Y][FIELD_WIDTH_X];
+    char screen_buffer[HEIGHT_Y][WIDTH_X];
     Field *field;
     Stone *stone;
 
